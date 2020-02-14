@@ -70,6 +70,12 @@
                                         <exclude reference="e1U-8d-7Q5"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="GTx-Mg-lK7"/>
+                                        <exclude reference="e1U-8d-7Q5"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uZ-kc-K2T">
                                 <rect key="frame" x="0.0" y="817" width="414" height="79"/>
@@ -91,6 +97,11 @@
                                         <exclude reference="dLa-qn-6eC"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="dLa-qn-6eC"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <segue destination="ktN-J6-wlJ" kind="presentation" identifier="segue" id="sLG-8G-WEZ"/>
                                 </connections>
@@ -104,10 +115,10 @@
                             <constraint firstItem="WBC-i0-sQK" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Hga-dr-uTh"/>
                             <constraint firstItem="UnY-h9-Rmc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="IpR-X1-kkl"/>
                             <constraint firstAttribute="bottom" secondItem="2uZ-kc-K2T" secondAttribute="bottom" id="PKI-eW-GY4"/>
-                            <constraint firstItem="2uZ-kc-K2T" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VQ8-mc-GxW"/>
+                            <constraint firstItem="2uZ-kc-K2T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VQ8-mc-GxW"/>
                             <constraint firstItem="WBC-i0-sQK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YCC-ig-F9R"/>
                             <constraint firstAttribute="bottom" secondItem="WBC-i0-sQK" secondAttribute="bottom" id="YrC-mf-r1x"/>
-                            <constraint firstItem="2uZ-kc-K2T" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="arO-si-AAe"/>
+                            <constraint firstItem="2uZ-kc-K2T" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="arO-si-AAe"/>
                             <constraint firstItem="UnY-h9-Rmc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="h7N-jc-Flf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UnY-h9-Rmc" secondAttribute="trailing" constant="20" id="lBW-11-eGh"/>
                         </constraints>
@@ -121,6 +132,13 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <exclude reference="h7N-jc-Flf"/>
+                                <exclude reference="AIY-Xd-wfc"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <exclude reference="C2o-Tp-xUm"/>
+                                <include reference="h7N-jc-Flf"/>
                                 <exclude reference="AIY-Xd-wfc"/>
                             </mask>
                         </variation>
@@ -190,10 +208,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="GYz-Sx-iCn" firstAttribute="trailing" secondItem="oDn-ZV-A85" secondAttribute="trailing" id="DEs-A3-DYY"/>
+                            <constraint firstItem="GYz-Sx-iCn" firstAttribute="trailing" secondItem="0HQ-BD-hqO" secondAttribute="trailing" id="DEs-A3-DYY"/>
                             <constraint firstItem="GYz-Sx-iCn" firstAttribute="top" secondItem="TuI-MF-AQ6" secondAttribute="bottom" constant="8" symbolic="YES" id="HHd-7X-hHw"/>
                             <constraint firstItem="TuI-MF-AQ6" firstAttribute="top" secondItem="oDn-ZV-A85" secondAttribute="top" constant="8" id="NT6-we-Ck5"/>
-                            <constraint firstItem="GYz-Sx-iCn" firstAttribute="leading" secondItem="oDn-ZV-A85" secondAttribute="leading" id="QAS-Pg-VTc"/>
+                            <constraint firstItem="GYz-Sx-iCn" firstAttribute="leading" secondItem="0HQ-BD-hqO" secondAttribute="leading" id="QAS-Pg-VTc"/>
                             <constraint firstAttribute="bottom" secondItem="GYz-Sx-iCn" secondAttribute="bottom" constant="20" symbolic="YES" id="iC6-ca-vyZ"/>
                             <constraint firstItem="TuI-MF-AQ6" firstAttribute="leading" secondItem="oDn-ZV-A85" secondAttribute="leading" constant="20" id="pkj-tM-SUQ"/>
                         </constraints>
