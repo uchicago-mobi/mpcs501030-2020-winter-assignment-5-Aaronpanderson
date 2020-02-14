@@ -1,0 +1,1 @@
+App icon from: https://icons.iconarchive.com/icons/alecive/flatwoken/512/Apps-Google-Maps-icon.png
