@@ -11,6 +11,7 @@ import MapKit
 
 class PlaceMarkerView: MKMarkerAnnotationView {
     
+    // View for the annotations
     override var annotation: MKAnnotation? {
         willSet {
             clusteringIdentifier = "Place"

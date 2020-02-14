@@ -9,8 +9,10 @@
 import UIKit
 import MapKit
 
+// extends MKPointAnnotations
 class Place: MKPointAnnotation {
     
+    // Constructor based on info from plist
     init(name: String, longDescription: String, lat: Double, long: Double) {
         super.init()
         self.title = name
