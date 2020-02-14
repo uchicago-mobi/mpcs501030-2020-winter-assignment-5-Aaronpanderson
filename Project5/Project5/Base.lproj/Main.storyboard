@@ -53,7 +53,7 @@
                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ktN-J6-wlJ" kind="presentation" id="sLG-8G-WEZ"/>
+                                    <segue destination="ktN-J6-wlJ" kind="presentation" identifier="segue" id="sLG-8G-WEZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -118,12 +118,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuI-MF-AQ6">
+                                <rect key="frame" x="20" y="8" width="30" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oDn-ZV-A85"/>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="GYz-Sx-iCn" id="qqX-WX-s8L"/>
+                        <outlet property="xButton" destination="TuI-MF-AQ6" id="ges-b2-xu4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kkn-UA-wMP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

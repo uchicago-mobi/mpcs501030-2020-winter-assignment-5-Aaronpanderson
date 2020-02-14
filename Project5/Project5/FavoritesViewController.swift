@@ -11,14 +11,15 @@ import UIKit
 class FavoritesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     weak var delegate: PlacesFavoritesDelegate?
-    @IBOutlet weak var tableView: UITableView!
     var favorites: [Place] = []
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var xButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        self.delegate = MapViewController
+        xButton.addTarget(self, action: #selector(xButtonTapped(_:)), for: .touchUpInside)
         // Do any additional setup after loading the view.
     }
     
@@ -27,6 +28,10 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         favorites = DataManager.sharedInstance.getFavorites()
         tableView.rowHeight = 80
         tableView.reloadData()
+    }
+    
+    @objc func xButtonTapped(_ button: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -49,7 +54,8 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        delegate?.favoritePlace(name: favorites[indexPath.row].title!)
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

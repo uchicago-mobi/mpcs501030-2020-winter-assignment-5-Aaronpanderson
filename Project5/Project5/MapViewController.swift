@@ -24,12 +24,7 @@ class MapViewController: UIViewController {
         definesPresentationContext = true
         mapView.showsCompass = false
         mapView.pointOfInterestFilter = .excludingAll
-        let meters: Double =  8000
-        let zoomLocation = CLLocationCoordinate2DMake(41.8781, -87.6298)
-        let viewRegion = MKCoordinateRegion(center: zoomLocation, latitudinalMeters: meters, longitudinalMeters: meters)
-        mapView.setRegion(viewRegion, animated: true)
         starButton.addTarget(self, action: #selector(starButtonTapped(_:)), for: .touchUpInside)
-        favButton.addTarget(self, action: #selector(favButtonTapped(_:)), for: .touchUpInside)
         starButton.tintColor = UIColor.yellow
         locationView.alpha = 0.8
         favButton.layer.backgroundColor = UIColor.darkGray.cgColor
@@ -38,6 +33,7 @@ class MapViewController: UIViewController {
         for place in DataManager.sharedInstance.places {
             mapView.addAnnotation(place)
         }
+        favoritePlace(name: "Wrigley Field")
         
     }
     
@@ -58,7 +54,18 @@ class MapViewController: UIViewController {
 //        self.present(vc, animated: true, completion: nil)
     }
     
-    
+    // MARK: - Navigation
+
+    // prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Using the correct identifier
+        if segue.identifier == "segue" {
+            // Set up the new IssueDetailViewController
+            if let vc = segue.destination as? FavoritesViewController {
+                vc.delegate = self
+            }
+        }
+    }
     
     
 }
@@ -109,19 +116,15 @@ extension MapViewController: PlacesFavoritesDelegate {
         let newPlace = DataManager.sharedInstance.getPlaceWithName(name: name)
         let viewRegion = MKCoordinateRegion(center: newPlace!.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         mapView.setRegion(viewRegion, animated: true)
+        titleLabel.text = newPlace?.title
+        descLabel.text = newPlace?.subtitle
+        if (DataManager.sharedInstance.isFavorite(place: titleLabel.text!)) {
+            starButton.isSelected = true
+        }
+        else {
+            starButton.isSelected = false
+        }
     }
 
 }
 
-// MARK: - Navigation
-
-//// prepare for segue
-//func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//    // Using the correct identifier
-//    if segue.identifier == "segue" {
-//        // Set up the new IssueDetailViewController
-//        if let vc = segue.destination as? FavoritesViewController {
-//            // Stuff
-//        }
-//    }
-//}
